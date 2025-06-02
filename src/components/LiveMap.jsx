@@ -28,7 +28,6 @@ const LiveMap = () => {
     id="map-container"
     style={{ height: "400px", width: "100%", marginTop: "2rem" }}
   ></div>
-);
     <div style={{ height: '600px', width: '100%', marginTop: '4rem' }}>
       <MapContainer center={[51.505, -0.09]} zoom={2} scrollWheelZoom={false} style={{ height: '100%', width: '100%' }}>
         <TileLayer
