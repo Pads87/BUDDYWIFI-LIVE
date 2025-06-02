@@ -1,2 +1,2 @@
-export * from './phantom';
-export * from './solanaUtils';
+export { connectPhantomWallet as connectWallet } from './phantom';
+export { getWalletAddress } from './solanaUtils';
