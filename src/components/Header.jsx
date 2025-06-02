@@ -1,22 +1,35 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import React, { useEffect, useState } from 'react';
+import { connectWallet, getWalletAddress } from '../wallet/wallet-utils';
 
 const Header = () => {
+  const [walletAddress, setWalletAddress] = useState('');
+
+  const handleConnect = async () => {
+    const address = await connectWallet();
+    if (address) setWalletAddress(address);
+  };
+
+  useEffect(() => {
+    const checkConnection = async () => {
+      const address = await getWalletAddress();
+      if (address) setWalletAddress(address);
+    };
+    checkConnection();
+  }, []);
+
   return (
-    <header className="bg-white shadow p-4 flex justify-between items-center rounded-b-2xl">
-      <Link to="/" className="text-2xl font-bold text-buddyblue">
-        BuddyWiFi
-      </Link>
-      <div className="flex items-center gap-4">
-        <Link to="/dashboard" className="text-sm font-medium hover:underline">
-          Dashboard
-        </Link>
-        <Link to="/admin" className="text-sm font-medium hover:underline">
-          Admin Panel
-        </Link>
-        <WalletMultiButton />
-      </div>
+    <header className="bg-white shadow-md p-4 flex justify-between items-center">
+      <h1 className="text-xl font-bold text-blue-600">BuddyWiFi</h1>
+      {walletAddress ? (
+        <div className="text-sm text-gray-600">Connected: {walletAddress.slice(0, 4)}...{walletAddress.slice(-4)}</div>
+      ) : (
+        <button
+          onClick={handleConnect}
+          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition"
+        >
+          Connect Wallet
+        </button>
+      )}
     </header>
   );
 };

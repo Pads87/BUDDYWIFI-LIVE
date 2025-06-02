@@ -8,16 +8,15 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@solana/wallet-adapter-base": "^0.9.20",
-    "@solana/wallet-adapter-react": "^0.15.6",
-    "@solana/wallet-adapter-react-ui": "^0.10.2",
-    "@solana/wallet-adapter-wallets": "^0.11.13",
     "@solana/web3.js": "^1.92.5",
+    "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-leaflet": "^5.0.0",
     "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.5.0",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.1",
