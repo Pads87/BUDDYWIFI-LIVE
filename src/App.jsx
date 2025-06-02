@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Map from "./components/Map";
-import ProviderDashboard from "./components/ProviderDashboard";
+import ProviderDashboard from "./pages/ProviderDashboard";
 import AdminPanel from "./components/AdminPanel";
 import { connectPhantomWallet, getBalance } from "./utils/wallet-utils";
 
