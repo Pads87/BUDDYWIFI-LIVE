@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import App from "./App";
-import Dashboard from "./pages/ProviderDashboard";
-import AdminPanel from "./pages/AdminPanel";
+import App from "./src/App.jsx";
+import Dashboard from "./pages/ProviderDashboard.jsx";
+import AdminPanel from "./pages/AdminPanel.jsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
