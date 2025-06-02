@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import LiveMap from "./components/LiveMap";
+import LiveMap from "../components/LiveMap";
 
 
 
