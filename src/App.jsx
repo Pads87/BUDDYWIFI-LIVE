@@ -1,57 +1,37 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
-
-import {
-  ConnectionProvider,
-  WalletProvider
-} from "@solana/wallet-adapter-react";
-import {
-  WalletModalProvider
-} from "@solana/wallet-adapter-react-ui";
-import {
-  PhantomWalletAdapter
-} from "@solana/wallet-adapter-wallets";
-import "@solana/wallet-adapter-react-ui/styles.css";
-
-// Components
+import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Map from "./components/Map";
+import ProviderDashboard from "./components/ProviderDashboard";
+import AdminPanel from "./components/AdminPanel";
+import { connectPhantomWallet, getBalance } from "./utils/wallet-utils";
 
-// Pages
-import Home from "./pages/Home";
-import AdminPanel from "./pages/AdminPanel";
-import ProviderDashboard from "./pages/ProviderDashboard";
+function App() {
+  const [walletAddress, setWalletAddress] = useState(null);
+  const [balance, setBalance] = useState(null);
 
-// Solana setup
-const wallets = [new PhantomWalletAdapter()];
-const endpoint = "https://api.mainnet-beta.solana.com";
+  useEffect(() => {
+    connectPhantomWallet().then((pubKey) => {
+      setWalletAddress(pubKey);
+      if (pubKey) {
+        getBalance(pubKey).then((bal) => setBalance(bal));
+      }
+    });
+  }, []);
 
-const App = () => {
   return (
-    <ConnectionProvider endpoint={endpoint}>
-      <WalletProvider wallets={wallets} autoConnect>
-        <WalletModalProvider>
-          <Router>
-            <div className="min-h-screen flex flex-col bg-lightgray text-gray-900">
-              <Header />
-              <main className="flex-grow p-4 md:p-6">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/admin" element={<AdminPanel />} />
-                  <Route path="/dashboard" element={<ProviderDashboard />} />
-                </Routes>
-              </main>
-              <Footer />
-            </div>
-          </Router>
-        </WalletModalProvider>
-      </WalletProvider>
-    </ConnectionProvider>
+    <div className="min-h-screen bg-white text-gray-900 font-sans">
+      <Header />
+      <main className="p-4">
+        <Map />
+        {walletAddress && (
+          <ProviderDashboard walletAddress={walletAddress} balance={balance} />
+        )}
+      </main>
+      <AdminPanel />
+      <Footer />
+    </div>
   );
-};
+}
 
 export default App;
