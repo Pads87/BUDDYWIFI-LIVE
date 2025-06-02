@@ -1,10 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css"; // Tailwind CSS
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import App from "./App";
+import Dashboard from "./pages/ProviderDashboard";
+import AdminPanel from "./pages/AdminPanel";
+import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/admin" element={<AdminPanel />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
