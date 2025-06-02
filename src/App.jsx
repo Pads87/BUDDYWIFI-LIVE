@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Map from "./components/Map";
 import ProviderDashboard from "./pages/ProviderDashboard";
 import AdminPanel from "./pages/AdminPanel";
-import { connectPhantomWallet, getBalance } from "./utils/wallet-utils";
+import { connectPhantomWallet, getBalance } from "./wallet-utils";
 
 function App() {
   const [walletAddress, setWalletAddress] = useState(null);
