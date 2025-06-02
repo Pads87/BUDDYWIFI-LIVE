@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import App from "./src/App.jsx";
+import App from "./App.jsx";
 import Dashboard from "./pages/ProviderDashboard.jsx";
 import AdminPanel from "./pages/AdminPanel.jsx";
 import "./index.css";
