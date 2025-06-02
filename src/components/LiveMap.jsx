@@ -24,7 +24,6 @@ const LiveMap = () => {
   }, []);
 
   return (
-return (
   <div
     id="map-container"
     style={{ height: "400px", width: "100%", marginTop: "2rem" }}
