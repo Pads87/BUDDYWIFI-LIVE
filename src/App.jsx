@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Map from "./components/Map";
 import ProviderDashboard from "./pages/ProviderDashboard";
-import AdminPanel from "./components/AdminPanel";
+import AdminPanel from "./pages/AdminPanel";
 import { connectPhantomWallet, getBalance } from "./utils/wallet-utils";
 
 function App() {
