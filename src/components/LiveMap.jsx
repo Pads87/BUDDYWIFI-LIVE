@@ -15,7 +15,7 @@ const LiveMap = () => {
   const [nodes, setNodes] = useState([]);
 
   useEffect(() => {
-    fetch('https://your-ngrok-or-live-backend.com/api/heartbeat')
+    fetch('https://api.buddywifi.com/api/heartbeat')
       .then((res) => res.json())
       .then((data) => {
         setNodes(data.devices || []);
@@ -24,6 +24,12 @@ const LiveMap = () => {
   }, []);
 
   return (
+return (
+  <div
+    id="map-container"
+    style={{ height: "400px", width: "100%", marginTop: "2rem" }}
+  ></div>
+);
     <div style={{ height: '600px', width: '100%', marginTop: '4rem' }}>
       <MapContainer center={[51.505, -0.09]} zoom={2} scrollWheelZoom={false} style={{ height: '100%', width: '100%' }}>
         <TileLayer

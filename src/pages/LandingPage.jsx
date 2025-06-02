@@ -91,8 +91,8 @@ useEffect(() => {
         </div>
       </section>
 
-<section id="map" className="live-map-section">
-  <h2>Live Node Map</h2>
+<section id="map" className="section">
+  <h2 className="section-heading">Live Node Map</h2>
   <LiveMap />
 </section>
 
