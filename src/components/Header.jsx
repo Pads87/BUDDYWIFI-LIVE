@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { connectWallet, getWalletAddress } from '../wallet/wallet-utils';
+import { connectWallet, getWalletAddress } from '../wallet-utils';
 
 const Header = () => {
   const [walletAddress, setWalletAddress] = useState('');
