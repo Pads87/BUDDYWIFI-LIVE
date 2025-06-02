@@ -1,87 +1,79 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import buddyFace from "/buddywifi-face.png";
-import community from "/community-network.jpg";
-import internetTown from "/internet-town.jpg";
-import wifiSharing from "/wifi-sharing.jpg";
-import cloudsBackground from "/clouds-background-clean.png";
+import { Link } from "react-router-dom";
+import { MapContainer, TileLayer } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
-export default function LandingPage() {
-  const navigate = useNavigate();
-
+const LandingPage = () => {
   return (
-    <div className="bg-white text-gray-800 font-sans">
-      <header
-        className="bg-cover bg-center h-96 flex flex-col justify-center items-center text-center text-white"
-        style={{ backgroundImage: `url(${cloudsBackground})` }}
-      >
-        <h1 className="text-5xl font-bold drop-shadow-lg">Welcome to BuddyWiFi</h1>
-        <p className="mt-4 text-xl drop-shadow">Decentralized Wi-Fi powered by the people</p>
-        <button
-          onClick={() => navigate("/dashboard")}
-          className="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-full text-white text-lg"
-        >
-          Enter Dashboard
-        </button>
+    <div className="min-h-screen bg-gray-50 text-gray-900">
+      {/* Navbar */}
+      <header className="bg-white shadow sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold text-blue-600">BuddyWiFi</h1>
+          <nav className="space-x-4 hidden md:block">
+            <a href="#how" className="text-gray-700 hover:text-blue-500">How It Works</a>
+            <a href="#join" className="text-gray-700 hover:text-blue-500">Join the Network</a>
+            <a href="#map" className="text-gray-700 hover:text-blue-500">Map</a>
+            <Link to="/dashboard" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Dashboard</Link>
+          </nav>
+        </div>
       </header>
 
-      <section className="py-16 px-6 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-8">What is BuddyWiFi?</h2>
-        <p className="text-center max-w-3xl mx-auto text-lg">
-          BuddyWiFi is a decentralized mesh network where users share and access internet via long-range HaLow or ESP32 Access Points. It rewards uptime, coverage and reliability in $BUDDY tokens.
-        </p>
-        <img src={community} alt="Community Network" className="mt-8 w-full rounded-xl shadow-lg" />
+      {/* Hero Section */}
+      <section className="bg-cover bg-center py-20 text-center text-white" style={{ backgroundImage: "url('/internet-town.jpg')" }}>
+        <h2 className="text-4xl font-bold mb-4">Connect. Share. Earn.</h2>
+        <p className="text-xl max-w-2xl mx-auto">BuddyWiFi is a decentralized mesh Wi-Fi network powered by HaLow and crypto incentives. Earn by sharing. Connect affordably.</p>
       </section>
 
-      <section className="bg-gray-50 py-16 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <img src={internetTown} alt="Town Internet" className="w-full rounded-xl shadow" />
+      {/* How It Works */}
+      <section id="how" className="py-20 px-6 bg-white text-center">
+        <h3 className="text-3xl font-bold mb-6">How It Works</h3>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-10">
           <div>
-            <h3 className="text-2xl font-bold mb-4">How It Works</h3>
-            <p className="text-lg mb-2">
-              Provider Nodes use a wired connection to broadcast long-range signal.
-            </p>
-            <p className="text-lg mb-2">
-              Access Nodes rebroadcast open Wi-Fi with a captive portal where users can pay for time or data.
-            </p>
-            <p className="text-lg">
-              All users benefit from transparent uptime tracking and node rewards.
-            </p>
+            <img src="/wifi-sharing.jpg" alt="Share WiFi" className="w-full h-48 object-cover rounded-xl shadow" />
+            <h4 className="mt-4 font-semibold text-xl">Share Your Connection</h4>
+            <p>Use a Provider or Access Node to share low-bandwidth WiFi using HaLow-enabled devices.</p>
+          </div>
+          <div>
+            <img src="/community-network.jpg" alt="Community Mesh" className="w-full h-48 object-cover rounded-xl shadow" />
+            <h4 className="mt-4 font-semibold text-xl">Join the Mesh</h4>
+            <p>Connect with others in your area. Our mesh tech extends signal and coverage securely.</p>
+          </div>
+          <div>
+            <img src="/buddywifi-face.png" alt="BuddyWiFi Face" className="w-full h-48 object-cover rounded-xl shadow" />
+            <h4 className="mt-4 font-semibold text-xl">Earn & Connect</h4>
+            <p>Earn $BUDDY tokens for uptime. Users can access the net using simple crypto payments.</p>
           </div>
         </div>
       </section>
 
-      <section className="py-16 px-6 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-10">Share and Earn</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div>
-            <img src={wifiSharing} alt="Sharing Wi-Fi" className="rounded-xl shadow" />
-          </div>
-          <div>
-            <ul className="list-disc list-inside space-y-4 text-lg">
-              <li>Earn $BUDDY tokens for uptime and data throughput</li>
-              <li>Track your devices in the dashboard</li>
-              <li>Easy setup with ESP32 or Raspberry Pi</li>
-              <li>Plug-and-play reward system</li>
-              <li>Transparent and trustless data ownership</li>
-            </ul>
-          </div>
+      {/* Join the Network */}
+      <section id="join" className="bg-blue-50 py-20 px-6 text-center">
+        <h3 className="text-3xl font-bold mb-6">Start Your BuddyWiFi Node</h3>
+        <p className="max-w-3xl mx-auto mb-10">Get a HaLow-enabled ESP32 or Raspberry Pi setup. Plug it in, connect it, and watch the network grow while you earn!</p>
+        <img src="/clouds-background-clean.png" alt="Devices" className="mx-auto rounded-xl shadow max-w-xl" />
+      </section>
+
+      {/* Map Section */}
+      <section id="map" className="py-20 px-6 bg-white text-center">
+        <h3 className="text-3xl font-bold mb-6">Live Node Map</h3>
+        <p className="mb-6">See active BuddyWiFi devices around the globe.</p>
+        <div className="h-[400px] max-w-5xl mx-auto">
+          <MapContainer center={[51.505, -0.09]} zoom={2} scrollWheelZoom={false} className="h-full rounded-xl shadow">
+            <TileLayer
+              attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+          </MapContainer>
         </div>
       </section>
 
-      <section className="bg-blue-600 text-white py-16 px-6 text-center">
-        <h2 className="text-3xl font-bold mb-6">Ready to explore the network?</h2>
-        <button
-          onClick={() => navigate("/dashboard")}
-          className="px-8 py-4 bg-white text-blue-600 font-bold rounded-full text-lg hover:bg-gray-100"
-        >
-          Go to Dashboard
-        </button>
-      </section>
-
-      <footer className="bg-gray-900 text-gray-300 py-6 text-center">
-        &copy; {new Date().getFullYear()} BuddyWiFi. All rights reserved.
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-6 mt-20 text-center">
+        <p>&copy; {new Date().getFullYear()} BuddyWiFi — All rights reserved.</p>
       </footer>
     </div>
   );
-}
+};
+
+export default LandingPage;
