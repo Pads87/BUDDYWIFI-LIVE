@@ -5,9 +5,7 @@ import LiveMap from "../components/LiveMap";
 
 const LandingPage = () => {
   return (
-    <div className="landing-container">
-      <div className="clouds"></div>
-
+    <div className="landing-container custom-background">
       <nav className="navbar">
         <div className="nav-logo">BuddyWiFi</div>
         <ul className="nav-links">
@@ -29,7 +27,6 @@ const LandingPage = () => {
 
       <section id="about" className="section">
         <div className="section-content">
-            <img src="/buddywifi-face.png" alt="Logo" />
           <div>
             <h2>What is BuddyWiFi?</h2>
             <p>
