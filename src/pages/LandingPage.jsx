@@ -31,7 +31,7 @@ const LandingPage = () => {
       </nav>
 
       {/* Hero Section */}
-      <header className="hero" style={{ paddingTop: "14rem" }}>
+      <header className="hero" style={{ paddingTop: "17rem" }}>
         <h1 className="hero-title">Join the Future of Internet Sharing</h1>
         <p className="hero-subtitle">
           BuddyWiFi is a decentralized mesh Wi-Fi network powered by DePIN and Solana.
