@@ -1,6 +1,6 @@
 import React from "react";
+import "./LandingPage.css";
 import { Link } from "react-router-dom";
-import "../LandingPage.css";
 import LiveMap from "../components/LiveMap";
 
 const LandingPage = () => {
@@ -20,7 +20,6 @@ const LandingPage = () => {
       </nav>
 
       <header className="hero">
-        <img src="/buddywifi-face.png" alt="BuddyWiFi Logo" className="hero-logo" />
         <h1 className="hero-title">Join the Future of Internet Sharing</h1>
         <p className="hero-subtitle">
           BuddyWiFi is a decentralized mesh Wi-Fi network powered by DePIN and Solana.
@@ -56,7 +55,7 @@ const LandingPage = () => {
         <h2 className="section-heading">Key Features</h2>
         <div className="features-grid">
           <div className="feature-card">
-            <img src="/buddywifi-face.png" alt="Crypto Powered" />
+            <img src="/buddywifi-face.png" alt="Logo" />
             <h3>Crypto Powered</h3>
             <p>Payments and rewards are handled via Solana and Phantom wallets.</p>
           </div>
@@ -73,7 +72,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section id="map" className="section live-map-section">
+      <section id="map" className="section">
         <h2 className="section-heading">Live Node Map</h2>
         <LiveMap />
       </section>
