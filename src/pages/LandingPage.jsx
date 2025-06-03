@@ -50,7 +50,7 @@ const LandingPage = () => {
               points, that everyday users can join all over the world and pay via a subsciption.
             </p>
           </div>
-          <img src="/buddy-night.jpg" alt="Buddy in the Night" />
+          <img src="/buddy-night.png" alt="Buddy in the Night" />
         </div>
       </section>
 
