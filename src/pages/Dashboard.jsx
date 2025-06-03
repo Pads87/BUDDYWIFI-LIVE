@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Map from "../components/Map";
+import LiveMap from "../components/LiveMap";
 import AdminPanel from "../pages/AdminPanel";
 import ProviderDashboard from "../pages/ProviderDashboard";
 import Header from "../components/Header";
@@ -30,7 +30,7 @@ const Dashboard = () => {
     <div className="min-h-screen bg-white text-gray-900 font-sans">
       <Header />
       <main className="p-4">
-        <Map />
+        <LiveMap />
         {walletAddress && (
           <ProviderDashboard walletAddress={walletAddress} balance={balance} />
         )}
