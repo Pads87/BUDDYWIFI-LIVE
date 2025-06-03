@@ -26,25 +26,21 @@ const LiveMap = () => {
     <>
       <div id="map-container" style={{ height: "400px", width: "100%", marginTop: "2rem" }}></div>
       <div style={{ height: '600px', width: '100%', marginTop: '4rem' }}>
-        <MapContainer center={[51.505, -0.09]} zoom={2} scrollWheelZoom={false} style={{ height: '100%', width: '100%' }}>
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          {nodes.map((node, i) => (
-            <Marker key={i} position={[node.latitude, node.longitude]}>
-              <Popup>
-                <strong>{node.name}</strong><br />
-                Type: {node.type}<br />
-                Status: {node.status}<br />
-                Speed: {node.download_speed} ↓ / {node.upload_speed} ↑ Mbps
-              </Popup>
-            </Marker>
-          ))}
-        </MapContainer>
-      </div>
-    </>
-  );
-};
+  <MapContainer center={[51.505, -0.09]} zoom={2} scrollWheelZoom={false} style={{ height: '100%', width: '100%' }}>
+    <TileLayer
+      attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    />
+    {nodes.map((node, i) => (
+      <Marker key={i} position={[node.latitude, node.longitude]}>
+        <Popup>
+          <strong>{node.name}</strong><br />
+          Type: {node.type}<br />
+          Status: {node.status}<br />
+          Speed: {node.download_speed} ↓ / {node.upload_speed} ↑ Mbps
+        </Popup>
+      </Marker>
+    ))}
+  </MapContainer>
+</div>
 
-export default LiveMap;
