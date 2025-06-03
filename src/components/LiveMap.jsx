@@ -27,7 +27,7 @@ const LiveMap = () => {
       <MapContainer
         center={[51.505, -0.09]}
         zoom={2}
-        scrollWheelZoom={false}
+        scrollWheelZoom={true}
         style={{ height: '100%', width: '100%' }}
       >
         <TileLayer
