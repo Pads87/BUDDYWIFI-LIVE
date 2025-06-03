@@ -73,16 +73,17 @@ const LandingPage = () => {
         <h2 className="section-heading">Key Features</h2>
         <div className="features-grid">
           <div className="feature-card">
+            <img src="/wifi-sharing.jpg" alt="WiFi Sharing" />
             <h3>Crypto Powered</h3>
-            <p>Payments and rewards are handled via Solana and Phantom wallets.</p>
+            <p>Anyone can join the worldwide mesh and pay via web2 or web3 payment services.</p>
           </div>
           <div className="feature-card">
-            <img src="/wifi-sharing.jpg" alt="WiFi Sharing" />
+            <img src="/community-network.jpg" alt="Community" />
             <h3>Mesh Network</h3>
             <p>Devices form a resilient, low-latency mesh across urban areas.</p>
           </div>
           <div className="feature-card">
-            <img src="/community-network.jpg" alt="Community" />
+            <img src="/buddy-provider.png" alt="Provider" />
             <h3>Easy Setup</h3>
             <p>Plug in your device, register it, and start earning immediately.</p>
           </div>
