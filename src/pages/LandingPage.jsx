@@ -5,26 +5,18 @@ import LiveMap from "../components/LiveMap";
 
 const LandingPage = () => {
   return (
-    <div className="landing-container animated-bg">
-      {/* Animated background video */}
-      <video autoPlay loop muted playsInline className="background-video">
+    <div className="animated-bg">
+      {/* Animated Video Background */}
+      <video
+        className="background-video"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
         <source src="/buddy-background.webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>
-
-<div className="animated-bg">
-  <video
-    className="background-video"
-    autoPlay
-    loop
-    muted
-    playsInline
-  >
-    <source src="/buddy-background.webm" type="video/webm" />
-    Your browser does not support the video tag.
-  </video>
-</div>
-
 
       {/* Navigation Bar */}
       <nav className="navbar enhanced-navbar">
