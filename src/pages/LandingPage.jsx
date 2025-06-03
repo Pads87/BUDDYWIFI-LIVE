@@ -5,8 +5,15 @@ import LiveMap from "../components/LiveMap";
 
 const LandingPage = () => {
   return (
-    <div className="landing-container custom-background">
-      <nav className="navbar">
+    <div className="landing-container animated-bg">
+      {/* Animated background video */}
+      <video autoPlay loop muted playsInline className="background-video">
+        <source src="/dark-tech-city-bg.webm" type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Navigation Bar */}
+      <nav className="navbar enhanced-navbar">
         <div className="nav-logo">BuddyWiFi</div>
         <ul className="nav-links">
           <li><a href="#about">About</a></li>
@@ -17,6 +24,7 @@ const LandingPage = () => {
         </ul>
       </nav>
 
+      {/* Hero Section */}
       <header className="hero">
         <h1 className="hero-title">Join the Future of Internet Sharing</h1>
         <p className="hero-subtitle">
@@ -25,29 +33,36 @@ const LandingPage = () => {
         <a href="#about" className="cta-button">Learn More</a>
       </header>
 
+      {/* About Section */}
       <section id="about" className="section">
         <div className="section-content">
           <div>
             <h2>What is BuddyWiFi?</h2>
             <p>
-              BuddyWiFi allows anyone to share their internet securely and earn rewards. We use low-power devices like ESP32 and Raspberry Pi to broadcast access points that users can join and pay via crypto.
+              BuddyWiFi allows anyone to share their internet securely and earn rewards.
+              We use low-power devices like ESP32 and Raspberry Pi to broadcast access
+              points that users can join and pay via crypto.
             </p>
           </div>
         </div>
       </section>
 
+      {/* How It Works Section */}
       <section id="how-it-works" className="section reverse">
         <div className="section-content">
           <div>
             <h2>How It Works</h2>
             <p>
-              Provider nodes connect to the internet and broadcast via HaLow. Access nodes rebroadcast it via 2.4GHz. Users connect and are redirected to pay for time and data.
+              Provider nodes connect to the internet and broadcast via HaLow. Access nodes
+              rebroadcast it via 2.4GHz. Users connect and are redirected to pay for time
+              and data.
             </p>
           </div>
           <img src="/internet-town.jpg" alt="Internet in Town" />
         </div>
       </section>
 
+      {/* Features Section */}
       <section id="features" className="section">
         <h2 className="section-heading">Key Features</h2>
         <div className="features-grid">
@@ -68,11 +83,13 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Live Map Section */}
       <section id="map" className="section">
         <h2 className="section-heading">Live Node Map</h2>
         <LiveMap />
       </section>
 
+      {/* Footer */}
       <footer className="footer">
         <p>&copy; {new Date().getFullYear()} BuddyWiFi – All rights reserved.</p>
       </footer>
