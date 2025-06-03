@@ -45,11 +45,12 @@ const LandingPage = () => {
           <div>
             <h2>What is BuddyWiFi?</h2>
             <p>
-              BuddyWiFi allows anyone to share their internet securely and earn rewards.
-              We use low-power devices like ESP32 and Raspberry Pi to broadcast access
-              points that users can join and pay via crypto.
+              BuddyWiFi allows anyone to share their internet securely to earn $BUDDY.
+              We use highly efficent devices to broadcast access
+              points, that everyday users can join all over the world and pay via a subsciption.
             </p>
           </div>
+          <img src="/buddy-night.jpg" alt="Buddy in the Night" />
         </div>
       </section>
 
@@ -59,9 +60,8 @@ const LandingPage = () => {
           <div>
             <h2>How It Works</h2>
             <p>
-              Provider nodes connect to the internet and broadcast via HaLow. Access nodes
-              rebroadcast it via 2.4GHz. Users connect and are redirected to pay for time
-              and data.
+              Buddy Provider nodes connect to a household internet router and re-broadcast via HaLow. Buddy Access nodes then
+              connect to the HaLow network and rebroadcast it via 2.4GHz WiFi. As we grow, this then creates a world wide mesh where Everyday users will signup to Daily/Weekly/Monthly/Yearly subscriptions. The revenue will then be used to buy back the token and burnt.
             </p>
           </div>
           <img src="/internet-town.jpg" alt="Internet in Town" />
