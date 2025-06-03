@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./LandingPage.css";
+import "../LandingPage.css";
 import LiveMap from "../components/LiveMap";
 
 const LandingPage = () => {
