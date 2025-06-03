@@ -20,11 +20,13 @@ const LandingPage = () => {
       </nav>
 
       <header className="hero">
-        <h1 className="hero-title">Join the Future of Internet Sharing</h1>
-        <p className="hero-subtitle">
-          BuddyWiFi is a decentralized mesh Wi-Fi network powered by DePIN and Solana.
-        </p>
-        <a href="#about" className="cta-button">Learn More</a>
+        <div className="hero-content">
+          <h1 className="hero-title">Join the Future of Internet Sharing</h1>
+          <p className="hero-subtitle">
+            BuddyWiFi is a decentralized mesh Wi-Fi network powered by DePIN and Solana.
+          </p>
+          <a href="#about" className="cta-button">Learn More</a>
+        </div>
       </header>
 
       <section id="about" className="section">
