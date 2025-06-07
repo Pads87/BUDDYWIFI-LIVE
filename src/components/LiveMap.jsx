@@ -14,7 +14,7 @@ const LiveMap = () => {
   const [nodes, setNodes] = useState([]);
 
   useEffect(() => {
-    fetch('https://api.buddywifi.com/api/heartbeat')
+    fetch('https://b80c-86-2-48-212.ngrok-free.app/api/heartbeat')
       .then((res) => res.json())
       .then((data) => {
         setNodes(data.devices || []);
